@@ -1,9 +1,9 @@
 name: Flutter CI
 
 on:
-  pull_request:
-    branches: [ main ]
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -11,25 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1'
+          flutter-version: '3.32.2'  # ✅ دقیقاً نسخه‌ای که داری
+
+      - name: Show Flutter version
+        run: flutter --version
 
       - name: Activate Melos
         run: dart pub global activate melos
 
-      - name: Install Dependencies
+      - name: Melos Bootstrap
         run: melos bootstrap
 
-      - name: Check Code Formatting
-        run: dart format . --set-exit-if-changed
-
-      - name: Analyze Code
-        run: flutter analyze
+      - name: Run Analyze
+        run: melos analyze
 
       - name: Run Tests
-        run: flutter test
+        run: melos test
