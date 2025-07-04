@@ -1,0 +1,7 @@
+name: data_app
+packages:
+  - packages/**
+scripts:
+  analyze: melos exec -- flutter analyze
+  test: melos exec -- flutter test
+  format-check: dart format . --set-exit-if-changed
