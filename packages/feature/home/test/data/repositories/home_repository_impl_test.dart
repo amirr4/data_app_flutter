@@ -13,7 +13,13 @@ void main() {
   });
 
   test('should return items from remote datasource', () async {
-    final items = [ItemModel(id: 1, title: 'test')];
+    final items = [
+      ItemModel(
+        id: 1,
+        title: 'test',
+        description: 'test description',
+      ).toEntity(),
+    ];
 
     when(mockRemote.getRemoteItems()).thenAnswer((_) async => items);
 

@@ -5,11 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:home/data/datasources/remote_data_source.dart' as _i5;
-import 'package:home/data/models/item_model.dart' as _i6;
-import 'package:home/domain/entities/item.dart' as _i4;
-import 'package:home/domain/repositories/home_repository.dart' as _i2;
-import 'package:home/domain/usecases/fetch_items_usecase.dart' as _i7;
+import 'package:home/home.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -41,37 +37,35 @@ class MockHomeRepository extends _i1.Mock implements _i2.HomeRepository {
   }
 
   @override
-  _i3.Future<List<_i4.Item>> fetchItems() =>
+  _i3.Future<List<_i2.Item>> fetchItems() =>
       (super.noSuchMethod(
             Invocation.method(#fetchItems, []),
-            returnValue: _i3.Future<List<_i4.Item>>.value(<_i4.Item>[]),
+            returnValue: _i3.Future<List<_i2.Item>>.value(<_i2.Item>[]),
           )
-          as _i3.Future<List<_i4.Item>>);
+          as _i3.Future<List<_i2.Item>>);
 }
 
 /// A class which mocks [RemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRemoteDataSource extends _i1.Mock implements _i5.RemoteDataSource {
+class MockRemoteDataSource extends _i1.Mock implements _i2.RemoteDataSource {
   MockRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Future<List<_i6.ItemModel>> getRemoteItems() =>
+  _i3.Future<List<_i2.Item>> getRemoteItems() =>
       (super.noSuchMethod(
             Invocation.method(#getRemoteItems, []),
-            returnValue: _i3.Future<List<_i6.ItemModel>>.value(
-              <_i6.ItemModel>[],
-            ),
+            returnValue: _i3.Future<List<_i2.Item>>.value(<_i2.Item>[]),
           )
-          as _i3.Future<List<_i6.ItemModel>>);
+          as _i3.Future<List<_i2.Item>>);
 }
 
 /// A class which mocks [FetchItemsUseCase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFetchItemsUseCase extends _i1.Mock implements _i7.FetchItemsUseCase {
+class MockFetchItemsUseCase extends _i1.Mock implements _i2.FetchItemsUseCase {
   MockFetchItemsUseCase() {
     _i1.throwOnMissingStub(this);
   }
@@ -88,10 +82,10 @@ class MockFetchItemsUseCase extends _i1.Mock implements _i7.FetchItemsUseCase {
           as _i2.HomeRepository);
 
   @override
-  _i3.Future<List<_i4.Item>> call() =>
+  _i3.Future<List<_i2.Item>> call() =>
       (super.noSuchMethod(
             Invocation.method(#call, []),
-            returnValue: _i3.Future<List<_i4.Item>>.value(<_i4.Item>[]),
+            returnValue: _i3.Future<List<_i2.Item>>.value(<_i2.Item>[]),
           )
-          as _i3.Future<List<_i4.Item>>);
+          as _i3.Future<List<_i2.Item>>);
 }

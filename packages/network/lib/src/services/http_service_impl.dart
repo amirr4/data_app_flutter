@@ -19,7 +19,7 @@ class HttpServiceImpl implements HttpService {
     Map<String, String>? headers,
     Object? body,
   }) async {
-    final uri = Uri.parse(url);
-    return client.post(uri, headers: headers, body: body);
+    final uri = Uri.parse('${ApiConstants.baseUrl}$url');
+    return client.post(uri, headers: ApiConstants.defaultHeaders, body: body);
   }
 }

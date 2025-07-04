@@ -14,7 +14,7 @@ void main() {
   blocTest<HomeBloc, HomeState>(
     'emits [Loading, Loaded] when data is fetched successfully',
     build: () {
-      when(mockUseCase()).thenAnswer((_) async => [Item(id: 1, title: 'test')]);
+      when(mockUseCase()).thenAnswer((_) async => [Item(id: 1, title: 'test', description: 'test description')]);
       return HomeBloc(mockUseCase);
     },
     act: (bloc) => bloc.add(FetchItemsEvent()),

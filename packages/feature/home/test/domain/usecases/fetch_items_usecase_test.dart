@@ -13,7 +13,7 @@ void main() {
   });
 
   test('should return list of items from repository', () async {
-    final items = [Item(id: 1, title: 'Test')];
+    final items = [Item(id: 1, title: 'Test', description: 'Test description')];
 
     when(mockRepository.fetchItems()).thenAnswer((_) async => items);
 
