@@ -1,7 +1,9 @@
+import 'package:flutter/widgets.dart';
+
 void logInfo(String message) {
-  print('[INFO] $message');
+  debugPrint('[INFO] $message');
 }
 
 void logError(String message) {
-  print('[ERROR] $message');
+  debugPrint('[ERROR] $message');
 }

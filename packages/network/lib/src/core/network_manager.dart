@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:network/src/services/http_service.dart';
 
 class NetworkManager {
@@ -10,10 +11,10 @@ class NetworkManager {
     try {
       final response = await httpService.get(url);
       if (response.statusCode == 200) {
-        print('Response Body: ${response.body}');
+        debugPrint('Response Body: ${response.body}');
         return ApiResponse(data: response.body);
       } else {
-        print('Status Code: ${response.statusCode}');
+        debugPrint('Status Code: ${response.statusCode}');
         return ApiResponse(error: 'خطای سرور: ${response.statusCode}');
       }
     } catch (e) {
