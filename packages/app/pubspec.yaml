@@ -38,6 +38,8 @@ dependencies:
   flutter_bloc: ^8.1.0
   home:
     path: ../feature/home
+  core:
+    path: ../core
 
 dev_dependencies:
   flutter_test:

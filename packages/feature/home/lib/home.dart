@@ -15,6 +15,9 @@ export 'presentation/bloc/home_bloc.dart';
 export 'presentation/bloc/home_state.dart';
 export 'presentation/bloc/home_event.dart';
 export 'presentation/pages/home_page.dart';
+export 'presentation/pages/item_detail_page.dart';
 export 'presentation/bindings/home_bindings.dart';
 export 'presentation/widgets/item_card.dart';
+export 'presentation/navigation/home_routes.dart';
+
 

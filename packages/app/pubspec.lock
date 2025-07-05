@@ -50,7 +50,7 @@ packages:
     source: hosted
     version: "1.19.1"
   core:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../core"
       relative: true

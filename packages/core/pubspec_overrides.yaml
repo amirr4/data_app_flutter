@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: home,network
+dependency_overrides:
+  home:
+    path: ../feature/home
+  network:
+    path: ../network
