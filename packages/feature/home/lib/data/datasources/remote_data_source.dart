@@ -22,7 +22,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
           .map((json) => ItemModel.fromJson(json).toEntity())
           .toList();
     } else {
-      throw Exception(response.error ?? 'خطای ناشناخته');
+      throw Exception(response.error ?? 'Failed to fetch items');
     }
   }
 }

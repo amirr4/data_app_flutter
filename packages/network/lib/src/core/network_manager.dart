@@ -15,7 +15,7 @@ class NetworkManager {
         return ApiResponse(data: response.body);
       } else {
         debugPrint('Status Code: ${response.statusCode}');
-        return ApiResponse(error: 'خطای سرور: ${response.statusCode}');
+        return ApiResponse(error: 'Status Code: ${response.statusCode}');
       }
     } catch (e) {
       return ApiResponse(error: e.toString());
