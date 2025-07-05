@@ -1,7 +1,6 @@
 import 'dart:io';
 
 void main() {
-  // آدرس دقیق پوشه lib پکیج home
   final basePath = 'packages/feature/home/lib';
 
   final folders = [

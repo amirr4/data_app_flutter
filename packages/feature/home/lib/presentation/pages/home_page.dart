@@ -12,7 +12,6 @@ class HomePage extends StatelessWidget {
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           if (state is HomeInitial) {
-            // ارسال رویداد فقط یک بار
             context.read<HomeBloc>().add(FetchItemsEvent());
             return const Center(child: CircularProgressIndicator());
           }
@@ -23,7 +22,7 @@ class HomePage extends StatelessWidget {
 
           if (state is HomeLoaded) {
             if (state.items.isEmpty) {
-              return const Center(child: Text('هیچ آیتمی وجود ندارد.'));
+              return const Center(child: Text('no items'));
             }
 
             return ListView.separated(
@@ -41,11 +40,11 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('خطا: ${state.message}'),
+                  Text('error: ${state.message}'),
                   const SizedBox(height: 12),
                   ElevatedButton(
                     onPressed: () => context.read<HomeBloc>().add(FetchItemsEvent()),
-                    child: const Text('تلاش مجدد'),
+                    child: const Text('retry'),
                   ),
                 ],
               ),

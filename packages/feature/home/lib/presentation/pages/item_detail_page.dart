@@ -11,7 +11,7 @@ class ItemDetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('جزئیات آیتم'),
+        title: const Text('Item Detail'),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
       ),
@@ -55,7 +55,7 @@ class ItemDetailPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  'توضیحات',
+                  'Description',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.grey[600],
                         fontWeight: FontWeight.w600,
